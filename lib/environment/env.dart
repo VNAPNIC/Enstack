@@ -15,11 +15,11 @@ abstract class Env {
   _init() {
     runZonedGuarded(() async {
       WidgetsFlutterBinding.ensureInitialized();
-      await const MethodChannel('flavor')
-          .invokeMethod<String>('getFlavor')
-          .then((String? flavor) async {
-        BuildConfig.init(flavor: flavor);
-      }).catchError((error) {});
+      // await const MethodChannel('flavor')
+      //     .invokeMethod<String>('getFlavor')
+      //     .then((String? flavor) async {
+       await BuildConfig.init(flavor: 'development');
+      // }).catchError((error) {});
 
       await onInjection();
       HttpOverrides.global = MyHttpOverrides();

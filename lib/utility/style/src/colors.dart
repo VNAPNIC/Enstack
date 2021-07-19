@@ -2,8 +2,13 @@ part of style;
 
 const Color mColorNavigationBar = Colors.black;
 const Color mColorBackground = Colors.white;
-final Color mStatusColor = HexColor.fromHex('#33354E');
-final Color mPrimaryColor = HexColor.fromHex('#33354E');
+final Color mStatusColor = Colors.white;
+final Color mPrimaryColor = HexColor.fromHex('#009FE0');
+final Color mAuthBackgroundColor = HexColor.fromHex('#141379');
+final Color mTextSecondaryColor = HexColor.fromHex('#BDBDBD');
+final Color mTextTitleColor = HexColor.fromHex('#838383');
+final Color mBorderColor = HexColor.fromHex('#E8E8E8');
+final Color mHintTextColor = HexColor.fromHex('#ABABAB');
 
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".

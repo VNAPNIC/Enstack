@@ -1,1 +1,6 @@
-String logo = 'assets/images/logo.jpg';
+String mLogoImg = 'logo.png'.fromAssets;
+String mShowPasswordImg = 'show_password.png'.fromAssets;
+
+extension AssetsImage on String{
+  get fromAssets => 'assets/images/${this}';
+}

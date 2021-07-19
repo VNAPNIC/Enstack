@@ -1,1 +1,12 @@
-{}
+{
+  "appName": "Enstack",
+  "appDescription": "Enabling Endeavors",
+  "hello": "Hello",
+  "signInToYourAccount": "Sign in to your account",
+  "emailAddress": "Email Address",
+  "password": "Password",
+  "forgetPassword": "Forget Password?",
+  "signIn": "Sign In",
+  "doesNotHaveAnAccountYet": "Doesn’t have an account yet?  ",
+  "create": "Create"
+}
