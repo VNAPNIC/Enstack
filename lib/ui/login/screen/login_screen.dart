@@ -2,6 +2,7 @@ import 'package:enstack/generated/l10n.dart';
 import 'package:enstack/ui/common/auth/auth_frame.dart';
 import 'package:enstack/ui/common/button/button_radius.dart';
 import 'package:enstack/ui/common/textfield/text_field_custom.dart';
+import 'package:enstack/ui/forget_pasword/forget_password_route.dart';
 import 'package:enstack/utility/style/style.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return AuthFrame(
       title: S.current.hello,
+      titleFontSize: mH1Size,
       description: S.current.signInToYourAccount,
+      descriptionFontSize: mH4Size,
       child: Column(
         children: [
           // email field
@@ -43,9 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
             margin: EdgeInsets.only(top: 11.h, bottom: 27.h),
             child: Align(
               alignment: Alignment.centerRight,
-              child: Text(
-                S.current.forgetPassword,
-                style: mActionTextStyle,
+              child: GestureDetector(
+                onTap: () {
+                  ForgetPasswordRoute.push();
+                },
+                child: Text(
+                  S.current.forgetPassword,
+                  style: mActionTextStyle,
+                ),
               ),
             ),
           ),

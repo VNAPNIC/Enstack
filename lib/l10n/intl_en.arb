@@ -6,7 +6,10 @@
   "emailAddress": "Email Address",
   "password": "Password",
   "forgetPassword": "Forget Password?",
+  "forgetPasswordTitle": "Forget Password",
+  "forgetPasswordDescription": "Entere the email associated with your account and\nwe’ll send an email instruction to reset your password.",
   "signIn": "Sign In",
   "doesNotHaveAnAccountYet": "Doesn’t have an account yet?  ",
-  "create": "Create"
+  "create": "Create",
+  "cancel": "Cancel"
 }

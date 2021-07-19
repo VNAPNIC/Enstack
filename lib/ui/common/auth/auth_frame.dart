@@ -8,13 +8,19 @@ class AuthFrame extends StatelessWidget {
   final Widget child;
   final String title;
   final String description;
+  final double titleFontSize;
+  final double descriptionFontSize;
+  final double? spacingTitleAndDescription;
 
-  const AuthFrame(
-      {Key? key,
-      required this.title,
-      required this.description,
-      required this.child})
-      : super(key: key);
+  const AuthFrame({
+    Key? key,
+    required this.title,
+    required this.titleFontSize,
+    required this.descriptionFontSize,
+    required this.description,
+    this.spacingTitleAndDescription,
+    required this.child,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -62,16 +68,24 @@ class AuthFrame extends StatelessWidget {
                   ),
                   child: SingleChildScrollView(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           title,
+                          textAlign: TextAlign.center,
                           style: mTitleTextStyle.copyWith(
-                              fontSize: mH2Size, fontWeight: FontWeight.bold),
+                            fontSize: titleFontSize,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: spacingTitleAndDescription ?? 0.0,
                         ),
                         Text(
                           description,
+                          textAlign: TextAlign.center,
                           style: mTitleTextStyle.copyWith(
-                            fontSize: mH4Size
+                            fontSize: descriptionFontSize,
                           ),
                         ),
                         SizedBox(
