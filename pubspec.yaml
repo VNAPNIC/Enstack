@@ -23,6 +23,7 @@ dependencies:
   get: ^4.1.4
   validators: ^3.0.0
   flutter_screenutil: ^5.0.0+2
+  flutter_native_splash: ^1.2.0
   flutter_svg: ^0.22.0
 
 dev_dependencies:

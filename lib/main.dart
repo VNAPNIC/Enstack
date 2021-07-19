@@ -48,23 +48,28 @@ class Application extends StatefulWidget {
 class _ApplicationState extends State<Application> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: Size(375, 812),
-      builder: () => GetMaterialApp(
-        title: 'flutter architecture',
-        localizationsDelegates: [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          S.delegate,
-        ],
-        locale: const Locale('en'),
-        supportedLocales: S.delegate.supportedLocales,
-        debugShowCheckedModeBanner: false,
-        fallbackLocale: const Locale('en'),
-        initialRoute: LoginRoute.id,
-        onGenerateRoute: (settings) => manifest(generateRoutes, settings),
-      ),
+    return FutureBuilder(
+      future: Future.delayed(Duration(seconds: 3)),
+      builder: (context, snapshot) {
+        return ScreenUtilInit(
+          designSize: Size(375, 812),
+          builder: () => GetMaterialApp(
+            title: 'flutter architecture',
+            localizationsDelegates: [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              S.delegate,
+            ],
+            locale: const Locale('en'),
+            supportedLocales: S.delegate.supportedLocales,
+            debugShowCheckedModeBanner: false,
+            fallbackLocale: const Locale('en'),
+            initialRoute: LoginRoute.id,
+            onGenerateRoute: (settings) => manifest(generateRoutes, settings),
+          ),
+        );
+      },
     );
   }
 }
