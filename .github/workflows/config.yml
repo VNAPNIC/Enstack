@@ -1,0 +1,45 @@
+on: 
+  push:
+    branches:
+    - master
+    - release/*
+    - develop
+  pull_request:
+    branches:
+    - master
+    - develop
+name: build and test app
+jobs:
+  build:
+    name: install dependencies
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.2.2'
+          channel: 'stable'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+      - run: npm test
+
+      - name: install dependencies
+        run: npm run init
+
+      - name: run tests
+        run: flutter test --coverage
+
+      #      - name: build run
+      #      - run: flutter run -t lib/main.dart --debug --flavor development
+      #      - run: flutter run -t lib/main.dart --debug --flavor staging
+      #      - run: flutter run -t lib/main.dart --debug --flavor preprod
+
+      - name: build development
+        run: flutter build apk -t lib/main.dart --release --flavor development
+#       - name: build staging
+#         run: flutter build apk -t lib/main.dart --flavor staging
+#       - name: build preprod
+#         run: flutter build apk -t lib/main.dart --flavor preprod
