@@ -48,7 +48,7 @@ class _CheckEmailScreenState extends State<CheckEmailScreen> {
           SizedBox(
             height: 29.h,
           ),
-          // cancel
+          // later
           GestureDetector(
             onTap: () {
               Get.back();

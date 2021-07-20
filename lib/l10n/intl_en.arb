@@ -16,5 +16,8 @@
   "ok": "Ok",
   "openEmail": "Open Mail app",
   "checkYourMail": "Check your mail",
-  "checkYourMailDescription": "We have sent a password revocery instruction to your\nregistered email."
+  "checkYourMailDescription": "We have sent a password revocery instruction to your\nregistered email.",
+  "succcess": "Succcess!",
+  "updatePasswordSucccess": "Awesome! You’ve successfully updated your password.!",
+  "goBackToLogin": "Go back to Login"
 }
