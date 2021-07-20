@@ -1,4 +1,3 @@
-import 'package:enstack/generated/l10n.dart';
 import 'package:enstack/utility/image_provide.dart';
 import 'package:enstack/utility/style/style.dart';
 import 'package:flutter/material.dart';
@@ -51,12 +50,10 @@ class AuthFrame extends StatelessWidget {
               SizedBox(
                 height: 156.h,
               ),
-              _Title(),
-              SizedBox(
-                height: 45.h,
-              ),
+              _Logo(),
               Expanded(
                 child: Container(
+                  margin: EdgeInsets.only(top: 45.h),
                   width: double.infinity,
                   padding: EdgeInsets.only(top: 42.h, right: 20.w, left: 20.w),
                   decoration: BoxDecoration(
@@ -105,37 +102,18 @@ class AuthFrame extends StatelessWidget {
   }
 }
 
-class _Title extends StatelessWidget {
-  const _Title({Key? key}) : super(key: key);
+class _Logo extends StatelessWidget {
+  const _Logo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(mLogoImg),
-        Container(
-          margin: EdgeInsets.only(top: 24.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                S.current.appName,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: mH1Size,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 8.w),
-                child: Text(
-                  S.current.appDescription,
-                  style: mPrimaryTextStyle,
-                ),
-              ),
-            ],
-          ),
+        Image.asset(
+          mLogoSplash,
+          width: 287.w,
+          height: 100.h,
         ),
       ],
     );

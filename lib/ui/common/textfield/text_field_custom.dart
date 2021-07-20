@@ -1,7 +1,7 @@
 import 'package:enstack/utility/image_provide.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:enstack/utility/style/style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextFieldCustom extends StatefulWidget {
   final String hintText;
@@ -24,6 +24,9 @@ class TextFieldCustom extends StatefulWidget {
 }
 
 class _TextFieldCustomState extends State<TextFieldCustom> {
+  bool _showPassword = false;
+  FocusNode focusNode = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,13 +45,14 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
         ),
       ),
       child: TextFormField(
+        focusNode: focusNode,
         onFieldSubmitted: widget.onFieldSubmitted,
         textInputAction: widget.textInputAction,
         keyboardType: widget.keyboardType,
         style: mTextFieldStyle,
         enableSuggestions: false,
         autocorrect: false,
-        obscureText: widget.isPassWord == true,
+        obscureText: widget.isPassWord == true && !_showPassword,
         decoration: InputDecoration(
             hintText: widget.hintText,
             hintStyle: mHintStyle,
@@ -58,17 +62,18 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
             errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
             suffixIcon: widget.isPassWord == true
-                ? Padding(
-                    padding: EdgeInsets.only(
-                      top: 12.0.h,
-                      bottom: 12.h,
-                      left: 12.w,
-                    ),
-                    child: Image.asset(
+                ? IconButton(
+                    iconSize: 24.w,
+                    icon: Image.asset(
                       mShowPasswordImg,
-                      height: 12.h,
                     ),
-                  )
+                    onPressed: () {
+                      focusNode.unfocus();
+                      focusNode.canRequestFocus = false;
+                      setState(() {
+                        _showPassword = !_showPassword;
+                      });
+                    })
                 : null),
       ),
     );

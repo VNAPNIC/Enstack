@@ -47,5 +47,5 @@ final mActionTextStyle = TextStyle(
   fontStyle: FontStyle.normal,
   fontWeight: FontWeight.w700,
   fontSize: 14.0.sp,
-  color: mTextSecondaryColor,
+  color: mTextTitleColor,
 );

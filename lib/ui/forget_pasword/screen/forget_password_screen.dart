@@ -5,6 +5,7 @@ import 'package:enstack/ui/common/textfield/text_field_custom.dart';
 import 'package:enstack/utility/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
   const ForgetPasswordScreen({Key? key}) : super(key: key);
@@ -41,11 +42,16 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
             height: 27.h,
           ),
           // cancel
-          Text(
-            S.current.cancel,
-            style: mActionTextStyle.copyWith(
-              color: mPrimaryColor,
-              decoration: TextDecoration.underline,
+          GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Text(
+              S.current.cancel,
+              style: mActionTextStyle.copyWith(
+                color: mPrimaryColor,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
         ],
