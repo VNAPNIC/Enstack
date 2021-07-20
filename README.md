@@ -39,7 +39,7 @@ You can run the app using the commands
 
 ## staging: flutter run -t lib/main.dart --debug --flavor staging
 
-## preprod: flutter run -t lib/main.dart --debug --flavor preprod
+## preprod: flutter run -t lib/main.dart --debug --flavor product
 ```
 
 ##### Build App
@@ -132,6 +132,3 @@ flutter pub global run intl_utils:generate
 
 
 Link library : https://pub.dev/packages/intl_utils
-
-## Visitors Count
-<img height="30px" src = "https://profile-counter.glitch.me/vnapnic/count.svg" alt ="Loading">
