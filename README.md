@@ -65,11 +65,12 @@ for IOS
 ## preprod: flutter build ios -t lib/main.dart --flavor product
 ```
 
-### resources
+### Resources
+
       * All resources (images, fonts, videos, ...) must be placed in the assets class
       * Before using them, please declare the path in utility class and the suffix of the class to be type_provide (image_provide.dart)
 
-###create splash
+### Create splash
 
 ```
 flutter pub run flutter_native_splash:create
@@ -94,7 +95,7 @@ generator using build_runner and remove conflict file :
 npm run generate
 ```
 
-## Indentation.
+### Indentation.
 - Auto indentation handled with git hook using [Lefthook](https://github.com/Arkweid/lefthook).
 - For mac users, run `npm run setup` and you should be done. More details below.
 - This project use npm for [Lefthook](https://github.com/Arkweid/lefthook) installation, to ease others getting it up running fast - run `npm install`
@@ -104,7 +105,7 @@ npm run generate
 ### Localization
 Using this library to handle multi-languages. Follow this guide to understand and config languages files
 
-#### Setup Step :
+##### Setup Step :
 
 * VSC, AS, IJ users need to install the plugins from the market.
 * vs-code: https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl
