@@ -1,5 +1,4 @@
 import 'package:enstack/generated/l10n.dart';
-import 'package:enstack/ui/check_email/check_email_route.dart';
 import 'package:enstack/ui/common/auth/auth_frame.dart';
 import 'package:enstack/ui/common/button/button_radius.dart';
 import 'package:enstack/ui/common/textfield/text_field_custom.dart';
@@ -7,46 +6,47 @@ import 'package:enstack/utility/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:open_mail_app/open_mail_app.dart';
 
-class ForgetPasswordScreen extends StatefulWidget {
-  const ForgetPasswordScreen({Key? key}) : super(key: key);
+class CheckEmailScreen extends StatefulWidget {
+  const CheckEmailScreen({Key? key}) : super(key: key);
 
   @override
-  _ForgetPasswordScreenState createState() => _ForgetPasswordScreenState();
+  _CheckEmailScreenState createState() => _CheckEmailScreenState();
 }
 
-class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+class _CheckEmailScreenState extends State<CheckEmailScreen> {
   @override
   Widget build(BuildContext context) {
     return AuthFrame(
-      title: S.current.forgetPasswordTitle,
+      title: S.current.checkYourMail,
       titleFontSize: mH3Size,
-      description: S.current.forgetPasswordDescription,
+      description: S.current.checkYourMailDescription,
       descriptionFontSize: mH5Size,
       spacingTitleAndDescription: 14.h,
       child: Column(
         children: [
           // email field
-          TextFieldCustom(
-            keyboardType: TextInputType.emailAddress,
-            textInputAction: TextInputAction.done,
-            hintText: S.current.emailAddress,
-            onFieldSubmitted: (value) {
-              CheckEmailRoute.push();
-            },
+          Opacity(
+            opacity: 0,
+            child: TextFieldCustom(
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              hintText: S.current.emailAddress,
+            ),
           ),
           SizedBox(
             height: 16.h,
           ),
           // submit button
           ButtonRadius(
-            callback: (){
-              CheckEmailRoute.push();
+            callback: () async {
+              await OpenMailApp.openMailApp();
             },
-            text: S.current.signIn,
+            text: S.current.openEmail,
           ),
           SizedBox(
-            height: 27.h,
+            height: 29.h,
           ),
           // cancel
           GestureDetector(
@@ -54,7 +54,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               Get.back();
             },
             child: Text(
-              S.current.cancel,
+              S.current.later,
               style: mActionTextStyle.copyWith(
                 color: mPrimaryColor,
                 decoration: TextDecoration.underline,

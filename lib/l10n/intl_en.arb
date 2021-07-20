@@ -11,5 +11,10 @@
   "signIn": "Sign In",
   "doesNotHaveAnAccountYet": "Doesn’t have an account yet?  ",
   "create": "Create",
-  "cancel": "Cancel"
+  "cancel": "Cancel",
+  "later": "Later",
+  "ok": "Ok",
+  "openEmail": "Open Mail app",
+  "checkYourMail": "Check your mail",
+  "checkYourMailDescription": "We have sent a password revocery instruction to your\nregistered email."
 }
