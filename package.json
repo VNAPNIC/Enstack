@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VNAPNIC/Flutter_Architecture.git"
+    "url": "git+https://github.com/VNAPNIC/Enstack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VNAPNIC/Flutter_Architecture/issues"
+    "url": "https://github.com/VNAPNIC/Enstack/issues"
   },
-  "homepage": "https://github.com/VNAPNIC/Flutter_Architecture#readme"
+  "homepage": "https://github.com/VNAPNIC/Enstack#readme"
 }
