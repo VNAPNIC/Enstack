@@ -42,7 +42,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.9.0
 
 flutter:
-  generate: true
+#   generate: true
   uses-material-design: true
   assets:
     - assets/images/
